@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.5",
+  "version": "1.0.12",
+  "id": "d5245805-41d5-42e3-a221-92976749b2eb",
+  "packageName": "com.microsoft.teams.mycards",
+  "developer": {
+    "name": "Mario-Francis E. & Emmanuel A.",
+    "websiteUrl": "https://dev.botframework.com",
+    "privacyUrl": "https://privacy.microsoft.com",
+    "termsOfUseUrl": "https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx"
+  },
+  "name": {
+    "short": "myCards",
+    "full": "Microsoft Teams Business Card Messaging Extension"
+  },
+  "description": {
+    "short": "Helps share businness card directly to conversations",
+    "full": "Helps share businness card directly to conversations"
+  },
+  "icons": {
+    "outline": "icon-outline.png",
+    "color": "icon-color.png"
+  },
+  "accentColor": "#FFFFFF",
+  "bots": [
+    {
+      "botId": "d5245805-41d5-42e3-a221-92976749b2eb",
+      "needsChannelSelector": false,
+      "isNotificationOnly": false,
+      "scopes": [
+        "team",
+        "personal",
+        "groupchat"
+      ]
+    }
+  ],
+  "composeExtensions": [
+    {
+      "botId": "d5245805-41d5-42e3-a221-92976749b2eb",
+      "commands": [
+        {
+          "id": "shareBusinessCard",
+          "type": "action",
+          "context": [ "compose" ],
+          "description": "Share business card in conversation",
+          "title": "Share myCard",
+          "parameters": [
+            {
+              "name": "withMobile",
+              "title": "Share Type",
+              "description": "Share with mobile",
+              "inputType": "toggle"
+            }
+          ],
+          "taskInfo": {
+            "title": "Specify share type",
+            "width": "300",
+            "height": "150"
+          }
+        },
+        {
+          "id": "viewContacts",
+          "type": "action",
+          "context": [ "compose" ],
+          "description": "View your contact list",
+          "title": "myContacts"
+        }
+      ]
+    }
+  ],
+  "permissions": [
+    "identity"
+  ],
+  "validDomains": [
+    "*.ngrok.io"
+  ]
+
+}
