@@ -35,6 +35,12 @@ namespace BusinessCardTeamsExtension
             // Create the Bot Framework Adapter with error handling enabled.
             services.AddSingleton<IBotFrameworkHttpAdapter, AdapterWithErrorHandler>();
 
+            // Create the storage we'll be using for User and Conversation state. (Memory is great for testing purposes.)
+            services.AddSingleton<IStorage, Microsoft.Bot.Builder.MemoryStorage>();
+
+            // Create the User state.
+            services.AddSingleton<UserState>();
+
             // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
             services.AddTransient<IBot, BusinessCardBot>();
 
